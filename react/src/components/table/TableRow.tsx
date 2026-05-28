@@ -1,6 +1,18 @@
 import React from "react";
 
-export const TableRow = React.memo(({ index, style, data }: any) => {
+interface User {
+  id: string | number;
+  name: string;
+  email: string;
+}
+
+interface TableRowProps {
+  index: number;
+  style: React.CSSProperties;
+  data: User[];
+}
+
+export const TableRow = React.memo(({ index, style, data }: TableRowProps) => {
   const user = data[index];
 
   return (
